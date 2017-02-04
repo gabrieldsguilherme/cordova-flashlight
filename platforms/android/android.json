@@ -1,0 +1,75 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Flashlight\"><param name=\"android-package\" value=\"nl.xservices.plugins.Flashlight\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Toast\"><param name=\"android-package\" value=\"nl.xservices.plugins.Toast\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.CAMERA\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "br.com.lanterna"
+        },
+        "cordova-plugin-flashlight": {
+            "PACKAGE_NAME": "br.com.lanterna"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "br.com.lanterna"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "file": "plugins/cordova-plugin-flashlight/www/Flashlight.js",
+            "id": "cordova-plugin-flashlight.Flashlight",
+            "clobbers": [
+                "window.plugins.flashlight"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-x-toast/www/Toast.js",
+            "id": "cordova-plugin-x-toast.Toast",
+            "clobbers": [
+                "window.plugins.toast"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-x-toast/test/tests.js",
+            "id": "cordova-plugin-x-toast.tests"
+        }
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-whitelist": "1.2.2",
+        "cordova-plugin-flashlight": "3.0.0",
+        "cordova-plugin-x-toast": "2.5.2"
+    }
+}
